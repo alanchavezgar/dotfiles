@@ -6,16 +6,21 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'chriskempson/base16-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'jreybert/vimagit'
 Plugin 'raimondi/delimitmate'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 Plugin 'kabbamine/vcoolor.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -31,7 +36,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'gabesoft/vim-ags'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'VundleVim/Vundle.vim'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 
 call vundle#end()
@@ -47,7 +51,7 @@ nmap <CR> o<Esc>
 set t_Co=256
 set background=dark
 let base16colorspace=256
-" colorscheme base16-ocean
+colorscheme base16-ocean
 
 syntax on
 set backspace=2
@@ -123,6 +127,9 @@ endfunction
 " Indentación
 set smartindent
 set smarttab
+
+" CtrlP show hidden files
+let g:ctrlp_show_hidden = 1
 
 " Bug en neosnippet
 " inoremap <expr><CR> neosnippet#expandable() ? neosnippet#mappings#expand_or_jump_impl() : pumvisible() ? neocomplete#close_popup() : "\<CR>"
