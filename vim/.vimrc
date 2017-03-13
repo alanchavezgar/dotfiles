@@ -13,7 +13,6 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'chriskempson/base16-vim'
 " Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dkprice/vim-easygrep'
-Plugin 'edkolev/tmuxline.vim'
 Plugin 'jreybert/vimagit'
 Plugin 'raimondi/delimitmate'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -21,12 +20,14 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'kabbamine/vcoolor.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
+Plugin 'stanangeloff/php.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
@@ -34,6 +35,7 @@ Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'gabesoft/vim-ags'
+Plugin 'valloric/matchtagalways'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'xuyuanp/nerdtree-git-plugin'
@@ -51,7 +53,7 @@ nmap <CR> o<Esc>
 set t_Co=256
 set background=dark
 let base16colorspace=256
-colorscheme base16-ocean
+colorscheme gruvbox
 
 syntax on
 set backspace=2
@@ -65,6 +67,7 @@ set lazyredraw
 set splitright
 set nu
 set relativenumber
+filetype plugin on
 
 let keyword_patterns = {}
 let keyword_patterns.html = '@\?\h\w*'
@@ -205,3 +208,9 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 endif
 
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+" Comandos
+map <C-p> :FZF<ENTER>
+map <C-l> :tabn<ENTER>
+map <C-h> :tabp<ENTER>
+
