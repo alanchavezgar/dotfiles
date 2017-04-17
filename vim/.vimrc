@@ -10,11 +10,15 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
+" This plugin is used for handling column separated data with Vim.
+Plugin 'chrisbra/csv.vim'
 Plugin 'chriskempson/base16-vim'
 " Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'jreybert/vimagit'
-Plugin 'raimondi/delimitmate'
+
+" Insert or delete brackets, parens, quotes in pair.
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
@@ -48,6 +52,10 @@ filetype plugin indent on
 " Línea en blanco
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
+" Resaltar posición del cursor
+set cursorline
+set cursorcolumn
 
 " Tema
 set t_Co=256
@@ -157,6 +165,7 @@ endif
 " Airline
 set laststatus=2
 let g:airline_theme = 'base16'
+let g:airline#extensions#tabline#enabled = 1
 
 " powerline symbols
 let g:airline_left_sep = ''
