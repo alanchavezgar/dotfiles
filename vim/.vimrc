@@ -38,6 +38,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
+Plugin 'tyrannicaltoucan/vim-deep-space'
 Plugin 'gabesoft/vim-ags'
 Plugin 'valloric/matchtagalways'
 Plugin 'vim-airline/vim-airline'
@@ -48,6 +49,7 @@ call vundle#end()
 filetype plugin indent on
 
 " ------------ Configuraciones ------------
+set clipboard=unnamed
 
 " Línea en blanco
 nmap <S-Enter> O<Esc>
@@ -58,10 +60,10 @@ set cursorline
 set cursorcolumn
 
 " Tema
-set t_Co=256
-set background=dark
-let base16colorspace=256
-colorscheme gruvbox
+colorscheme base16-default-dark
+let base16colorspace=256  " Access colors present in 256 colorspace
+"set t_Co=256
+"set background=dark
 
 syntax on
 set backspace=2
@@ -110,6 +112,9 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+
+" NERDTree
+let NERDTreeWinPos=1
 
 " Cursor de Tmux
 if exists('$TMUX')
@@ -223,3 +228,6 @@ map <C-p> :FZF<ENTER>
 map <C-l> :tabn<ENTER>
 map <C-h> :tabp<ENTER>
 
+" Historial de cambios persistente
+set undodir=~/.vim/undodir
+set undofile " Mantiene el hostorial de cambios entre sesiones
